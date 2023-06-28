@@ -2,9 +2,9 @@
 
 namespace ONEZEROHOTEL.Controllers
 {
-    public class SignUpController : Controller
+    public class ClientController : Controller
     {
-        public IActionResult Index()
+        public IActionResult SignUp()
         {
             return View();
         }
