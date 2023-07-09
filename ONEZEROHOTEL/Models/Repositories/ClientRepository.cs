@@ -1,10 +1,18 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 
 namespace ONEZEROHOTEL.Models.Repositories
 {
     public class ClientRepository : IClientRepository
     {
-        public IEnumerable<Client> AllClient = new List<Client>()
+        private readonly IConfiguration _configuration;
+        public ClientRepository(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
+        public IEnumerable<Client> AllClient => new List<Client>()
         {
             new Client()
             {
@@ -16,14 +24,33 @@ namespace ONEZEROHOTEL.Models.Repositories
             }
 
         };
-
-        public void WriteClient()
+        [HttpPost]
+        public Client CreateClient(Client client)
         {
-            using (StreamWriter writer = new StreamWriter("Clentdata.txt", true))
+            var connectionString = _configuration.GetConnectionString("DefaultConnection");
+            using(var con = new SqlConnection(connectionString))
             {
+                var cmd = new SqlCommand();
+                cmd.CommandText = "INSERT INTO Client(Id, FirstName, LastName, Email, Password)" + "VALUES (@Id, @FirstName, @LastName, @Email, @Password)";
+                cmd.Connection = con;
+                cmd.Parameters.AddWithValue("@Id", client.Id);
+                cmd.Parameters.AddWithValue("@FirstName", client.FirstName);
+                cmd.Parameters.AddWithValue("@LastName", client.LastName);
+                cmd.Parameters.AddWithValue("@Email", client.Email);
+                cmd.Parameters.AddWithValue("@Password", client.Password);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            return client;
+        }
+
+        public void WriteClient(Client client)
+        {
+            using (StreamWriter writer  = new StreamWriter("Clentdata.txt", true))
+            { 
                 foreach (var item in AllClient)
                 {
-                    writer.WriteLine($"|  {item.Id,-10}  |  {item.FirstName,-10}  |  {item.LastName,-10}  |  {item.Email,-10}  |  {item.Password,-10}");
+                    writer.Write($"|  {item.Id,-10}  |  {item.FirstName,-10}  |  {item.LastName,-10}  |  {item.Email,-10}  |  {item.Password,-10}");
                 }
 
             }

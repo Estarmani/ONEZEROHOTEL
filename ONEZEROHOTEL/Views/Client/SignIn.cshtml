@@ -1,0 +1,25 @@
+﻿@model ONEZEROHOTEL.Models.Client
+
+@{
+    ViewData["Title"] = "SignIn";
+}
+
+<section class="sign-up">
+    <div class="sign-up-sub">
+        <div class="sign-up-img">
+            <img src="~/Img/Lr2.png" alt="cabin" />
+        </div>
+        <div class="signIn-form">
+
+            <form asp-controller="Client" asp-action="SignIn">
+
+                <input asp-for="Email" type="text" placeholder="Email" required>
+                <input asp-for="Password" type="password" placeholder="Password" required>
+                <div class="sign-up-form">
+                    <input type="submit">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>

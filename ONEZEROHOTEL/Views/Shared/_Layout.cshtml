@@ -4,38 +4,36 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - StayCation</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/styles.css">
+    @*<link rel="stylesheet" href="~/css/regStyles.css">*@
+   
 </head>
 <body>
     <header>
-
         <div class="logo">
             <h1><span>Stay</span>cation</h1>
         </div>
         <div class="menu">
-            <a href="">Login</a>
-            <a href="">Home</a>
+            <a asp-controller="Home" asp-action="Index">Home</a>
             <a href="">Browse By</a>
             <a href="">Stories</a>
             <a href="">Agents</a>
-            <a href="">Sign Up</a>
+            <a asp-controller="Client" asp-action="SignUp">Sign Up</a>
+            <a asp-controller="Client" asp-action="SignIn">Sign In</a>
         </div>
-
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        @*<div class="container">
-            &copy; 2023 - ONEZEROHOTEL - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>*@
-
+    <footer>
         <div class="footer-main">
             <div class="footer-main-1" style="width: 300px; margin-left: 100px;">
                 <div class="footer-logo">
@@ -64,9 +62,15 @@
             <div class="copy"><p>Copyright 2023 All Rights Reserved</p></div>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <!--<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - StayCation - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>-->
+    <!--<script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>-->
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

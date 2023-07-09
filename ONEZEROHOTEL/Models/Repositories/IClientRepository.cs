@@ -2,6 +2,10 @@
 {
     public interface IClientRepository
     {
-        void WriteClient();
+        IEnumerable<Client> AllClient { get; }
+
+        Client CreateClient(Client client);
+        void WriteClient(Client client);
+        
     }
 }
