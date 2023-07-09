@@ -5,7 +5,7 @@ using ONEZEROHOTEL.Models.Repositories;
 namespace ONEZEROHOTEL.Controllers
 {
     public class ClientController : Controller
-    { 
+    {
         private readonly IClientRepository _clientRepository;
         public ClientController(IClientRepository clientRepository)
         {

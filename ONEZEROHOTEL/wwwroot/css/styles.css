@@ -116,8 +116,6 @@ header{
     height: 500px;
     width: 700px;
     margin-right: 80px;
-    background-size: cover;
-    /* background-repeat: no-repeat;*/
 }
 .short-img {
     height: 230px;
@@ -126,8 +124,6 @@ header{
     float: left;
     margin-left: 38px;
     border-radius: 20px;
-    background-size: cover;
-    /*background-repeat: no-repeat;*/
 }
 .long p{
     margin-top: 400px;
@@ -183,8 +179,6 @@ header{
 .sec-3-img {
     height: 300px;
     width: 100%;
-    background-size: cover;
-    /*background-repeat: no-repeat;*/
     /* border: 2px solid black; */
 }
 
@@ -194,29 +188,21 @@ header{
     background-color: red;
     float: left;
     border-radius: 15px;
-    background-size: cover;
-    /*background-repeat: no-repeat;*/
 }
-    .img-3 p {
-        margin-top: 220px;
-        font-family: 'Poppins';
-        background-size: cover;
-        /* background-repeat: no-repeat;*/
-    }
+.img-3 p{
+    margin-top: 220px;
+    font-family: 'Poppins';
+}
 .section-4 h1 {
     margin-top: 50px;
     font-family: 'Poppins';
     color: #152C5B;
     margin-left: 100px;
-    background-size: cover;
-    /* background-repeat: no-repeat;*/
 }
 
 .sec-4-img {
     height: 300px;
     width: 100%;
-    background-size: cover;
-    /*background-repeat: no-repeat;*/
     /* border: 2px solid black; */
 }
 
@@ -226,8 +212,6 @@ header{
     background-color:;
     float: left;
     border-radius: 15px;
-    background-size:cover;
-    /*background-repeat: no-repeat;*/
 }
 
     .img-4 p {
@@ -251,8 +235,6 @@ header{
     height: 200px;
     width: 250px;
     background-color: red;
-    background-size: cover;
-    /*background-repeat: no-repeat;*/
     float: left;
     border-radius: 15px;
 }
@@ -426,4 +408,3 @@ input {
     margin-top: 50px;
     margin-left: 50px;
 
-}

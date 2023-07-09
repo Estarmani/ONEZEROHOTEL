@@ -1,0 +1,163 @@
+.reg-header-text{
+    text-align: center;
+    font-family: 'poppins';
+    font-weight: lighter;
+   
+}
+.reg-header-text span{
+    color: #3252DF;
+}
+.reg-header-text h1 {
+    padding-top: 10px;
+ }
+.reg-header-text p {
+   padding-bottom: 10px;
+}
+.reg-sub{
+    height: 600px;
+    width: 100%;
+    border: 2px black;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+     background-color: #d5e0ec; 
+}
+.reg-sub2{
+    height: 600px;
+    width: 100%;
+    border: 2px black;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    /* background-color: #d5e0ec; */
+}
+.reg-sub-img{
+    /*background-color: rgb(113, 204, 204);*/
+    height: 550px;
+    width: 600px;
+    margin-left: 100px;
+    margin-top: 30px
+}
+.background{
+    background-image: url(./Img/hotel.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 50px;
+    height: 100%;
+    width: 100%;
+}
+
+.login-form{
+    border: 2ps solid black;
+    margin-left: 700px;
+    margin-top: 60px;
+}
+button{
+    width: 120px;
+    margin-top: 20px;
+    margin-left: 5px;
+    background-color: blue;
+}
+
+
+
+.reg-sub-form1{
+    /*background-color: blueviolet;*/
+    height: 550px;
+    width: 600px;
+    margin-right: 100px;
+    margin-top: 50px
+}
+.reg-sub-form2{
+    /*background-color: blueviolet;*/
+    height: 550px;
+    width: 600px;
+    margin-right: 100px;
+    margin-top: 110px
+}
+.form{
+  margin-left: 50px;
+  font-family: 'poppin';
+  
+}
+.form2{
+    margin-left: 50px;
+    font-family: 'poppin';
+    margin-top: 50px;
+    margin-left: 300px;
+    
+}
+.form2 input{
+  width: 200px;
+  height: 30px;
+  padding: 8px;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 10px;
+  opacity: 0.6;
+  font-family: 'poppins';
+  font-size: medium;
+  
+}
+.form3 input{
+  width: 200px;
+  height: 30px;
+  padding: 8px;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 10px;
+  width: 120px;
+  margin-top: 50px;
+  margin-left: 350px;
+  background-color: blue;
+  font-family: 'poppins';
+  font-weight: bold;
+}
+.form2 input[type=submit]{
+    width: 120px;
+    margin-top: 20px;
+    margin-left: 50px;
+    background-color: blue;
+    font-family: 'poppins';
+}
+
+.form input{
+  width: 200px;
+  padding: 8px;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 10px;
+
+}
+.form input[type=submit]{
+    width: 120px;
+    margin-top: 20px;
+    margin-left: 50px;
+    background-color: blue;
+    font-family: 'poppins';
+}
+
+.img-frame{
+    height: 400px;
+    width: 400px;
+   /* border: 2px solid black;*/
+    margin-top: 70px;
+    margin-left: 140px;
+    border-radius: 40px 0px;
+
+}
+img{
+    height: 400px;
+    width: 400px;    
+    margin-top: 5px;
+    margin-right: 150px;
+    /*padding-bottom: 100px;*/
+    border-radius: 40px 0px;
+    
+}
