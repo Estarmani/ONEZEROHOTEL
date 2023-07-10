@@ -37,10 +37,7 @@ namespace ONEZEROHOTEL.Controllers
         [HttpPost]
         public RedirectToActionResult SignIn(Client client)
         {
-            
-                return RedirectToAction("Index", "Home");
-            
-           
+            return RedirectToAction("Index", "Home");
         }
     }
 }
