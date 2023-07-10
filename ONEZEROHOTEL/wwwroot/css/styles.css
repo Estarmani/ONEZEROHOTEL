@@ -381,7 +381,7 @@ header{
 .signup-form {
    
     margin-top: -50px;
-    padding-left: 50px;
+    padding-left: -50px;
     
 }
 input {
@@ -404,7 +404,8 @@ input {
     margin-left:40px;
    
 }
-.signIn-form{
+.signIn-form {
     margin-top: 50px;
     margin-left: 50px;
+}
 

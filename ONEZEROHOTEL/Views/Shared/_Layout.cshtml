@@ -4,11 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - StayCation</title>
-
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/styles.css">
+    
 </head>
 <body>
     <header>
@@ -20,11 +21,12 @@
             <a href="">Browse By</a>
             <a href="">Stories</a>
             <a href="">Agents</a>
-            <a asp-controller="Client" asp-action="SignUp">Sign Up</a>
-            <a asp-controller="Client" asp-action="SignIn">Sign In</a>
+            <a asp-controller="Client" asp-action="Signup">SignUp</a>
+            <a asp-controller="Client" asp-action="SignIn">SignIn</a>
         </div>
     </header>
-
+   
+    
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

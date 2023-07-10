@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using ONEZEROHOTEL.Helper;
 
 namespace ONEZEROHOTEL.Models.Repositories
 {
@@ -27,13 +28,14 @@ namespace ONEZEROHOTEL.Models.Repositories
         [HttpPost]
         public Client CreateClient(Client client)
         {
+            var ClientId = IncrementID.GetNextId();
             var connectionString = _configuration.GetConnectionString("DefaultConnection");
             using(var con = new SqlConnection(connectionString))
             {
                 var cmd = new SqlCommand();
                 cmd.CommandText = "INSERT INTO Client(Id, FirstName, LastName, Email, Password)" + "VALUES (@Id, @FirstName, @LastName, @Email, @Password)";
                 cmd.Connection = con;
-                cmd.Parameters.AddWithValue("@Id", client.Id);
+                cmd.Parameters.AddWithValue("@Id", ClientId);
                 cmd.Parameters.AddWithValue("@FirstName", client.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", client.LastName);
                 cmd.Parameters.AddWithValue("@Email", client.Email);

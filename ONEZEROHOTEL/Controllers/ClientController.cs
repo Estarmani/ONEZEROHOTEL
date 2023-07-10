@@ -19,10 +19,14 @@ namespace ONEZEROHOTEL.Controllers
         }
 
         [HttpPost]
-        public RedirectToActionResult SignUp(Client client)
+        public IActionResult SignUp(Client client)
         {
-            _clientRepository.CreateClient(client);
-            return RedirectToAction("SignIn", "Client");
+            if (ModelState.IsValid)
+            {
+                _clientRepository.CreateClient(client);
+                return RedirectToAction("SignIn", "Client");
+            }
+            return View();
         }
 
         [HttpGet]
