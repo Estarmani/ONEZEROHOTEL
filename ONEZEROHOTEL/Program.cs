@@ -1,3 +1,4 @@
+using ONEZEROHOTEL.Context;
 using ONEZEROHOTEL.Models.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IClientRepository, ClientRepository>();
+builder.Services.AddDbContext<HotelContext>();
 
 var app = builder.Build();
 
