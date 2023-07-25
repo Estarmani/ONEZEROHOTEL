@@ -1,11 +1,13 @@
-﻿namespace ONEZEROHOTEL.Models.Repositories
+﻿using ONEZEROHOTEL.Context;
+
+namespace ONEZEROHOTEL.Models.Repositories
 {
     public interface IClientRepository
     {
-        IEnumerable<Client> AllClient { get; }
+        IEnumerable<vClient> AllClient { get; }
 
-        Client CreateClient(Client client);
-        void WriteClient(Client client);
-        
+        //vClient CreateClient(vClient client);
+        void WriteClient(vClient client);
+        void AddClient(Client client);
     }
 }

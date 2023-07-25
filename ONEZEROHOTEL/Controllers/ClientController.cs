@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ONEZEROHOTEL.Context;
 using ONEZEROHOTEL.Models;
 using ONEZEROHOTEL.Models.Repositories;
 
@@ -23,7 +24,7 @@ namespace ONEZEROHOTEL.Controllers
         {
             if (ModelState.IsValid)
             {
-                _clientRepository.CreateClient(client);
+                _clientRepository.AddClient(client);
                 return RedirectToAction("SignIn", "Client");
             }
             return View();

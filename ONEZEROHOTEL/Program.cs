@@ -5,8 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<IClientRepository, ClientRepository>();
-builder.Services.AddDbContext<HotelContext>();
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddDbContext<StayCationDbContext>();
 
 var app = builder.Build();
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using ONEZEROHOTEL.Context;
 using ONEZEROHOTEL.Helper;
 
 namespace ONEZEROHOTEL.Models.Repositories
@@ -8,25 +9,32 @@ namespace ONEZEROHOTEL.Models.Repositories
     public class ClientRepository : IClientRepository
     {
         private readonly IConfiguration _configuration;
-        public ClientRepository(IConfiguration configuration)
+        private readonly StayCationDbContext _stayCationDbContext;
+        public ClientRepository(IConfiguration configuration, StayCationDbContext stayCationDbContext)
         {
             _configuration = configuration;
+            _stayCationDbContext = stayCationDbContext;
         }
 
-        public IEnumerable<Client> AllClient => new List<Client>()
+        public IEnumerable<vClient> AllClient => new List<vClient>()
         {
-            new Client()
+            new vClient()
             {
                  Id = 1, FirstName = "Lucky", LastName = "Otono", Email = "lucky@gmail.com", Password = "password@1", ConfirmPassword = "password@1"
             },
-            new Client()
+            new vClient()
             {
                 Id = 2, FirstName = "Lisa", LastName = "Paul", Email = "lisa@gmail.com", Password = "password@1", ConfirmPassword = "password@1"
             }
 
         };
-        [HttpPost]
-        public Client CreateClient(Client client)
+        public void AddClient(Client client)
+        {
+            var ClientId = IncrementID.GetNextId();
+            _stayCationDbContext.Clients.Add(client);
+            _stayCationDbContext.SaveChanges();
+        }
+       /* public vClient CreateClient(vClient client)
         {
             var ClientId = IncrementID.GetNextId();
             var connectionString = _configuration.GetConnectionString("DefaultConnection");
@@ -44,9 +52,9 @@ namespace ONEZEROHOTEL.Models.Repositories
                 cmd.ExecuteNonQuery();
             }
             return client;
-        }
+        }*/
 
-        public void WriteClient(Client client)
+        public void WriteClient(vClient client)
         {
             using (StreamWriter writer  = new StreamWriter("Clentdata.txt", true))
             { 

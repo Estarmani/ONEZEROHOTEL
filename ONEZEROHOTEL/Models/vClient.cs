@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ONEZEROHOTEL.Models
 {
-    public class Client
+    public class vClient 
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
